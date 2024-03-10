@@ -1,0 +1,12 @@
+<div class="container mt-2">
+
+    <h2>Agregar una Pregunta</h2>
+    <div class="form-outline mb-4 white-background"  >
+        <mat-form-field  class="white-background">
+            <mat-label class="white-background">Ingrese Pregunta</mat-label>
+            <textarea matInput [(ngModel)]="pregunta" type="text" id="input" class="white-background"  required>
+            </textarea>
+            </mat-form-field>
+      </div>
+      <button mat-raised-button color="warn" (click)="coordinarCreacionPregunta()"> Agregar Pregunta</button>
+</div>

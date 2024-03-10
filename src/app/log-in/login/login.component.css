@@ -1,0 +1,18 @@
+.white-background{
+    background-color: #fff;
+}
+#input input{
+    width: 200vh;
+}
+#button{
+    border: 1px solid rgb(253, 131, 131);
+}
+.circulo {
+    position: absolute;
+    top:2%;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 136, 0, 0); /* Puedes cambiar el color de fondo según lo desees */
+    border-radius: 50%; /* Hace que los bordes sean redondeados para formar un círculo */
+    border: 2px solid #ff7b00;
+}

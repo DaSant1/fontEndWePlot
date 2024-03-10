@@ -1,0 +1,26 @@
+<div class="container mt-2">
+    <h2>Historial Preguntas</h2>
+    <div class="table-responsive">
+      <table class="table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+          <tr>
+            <th scope="col">idPregunta</th>
+            <th scope="col">Activa</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Accion</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let p of preguntas; let i=index">
+            <th scope="row"> {{p.id}} </th>
+            <td> {{p.Activo}} </td>
+            <td><p> {{p.pregunta}} </p></td>
+            <td>
+            <button (click)="coordinarProcesoActualizacionRol(p.id,i)">Activar o Bloquear Pregunta</button>
+            </td>
+          </tr>
+        
+        </tbody>
+      </table>
+    </div>
+  </div>

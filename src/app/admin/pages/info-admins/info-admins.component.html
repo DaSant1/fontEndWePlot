@@ -1,0 +1,28 @@
+<div class="container mt-2">
+    <h2>Admins Disponibles</h2>
+    <div class="table-responsive">
+      <table class="table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+          <tr>
+            <th scope="col">idAdmin</th>
+            <th scope="col">idUser</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Activo</th>
+            <th scope="col">Accion</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let a of admins;let i= index">
+            <th scope="row"> {{a.idAdmin}} </th>
+            <td> {{a.idUser}} </td>
+            <td><p> {{a.Name}} </p></td>
+            <td> {{a.Activo}} </td>
+            <td>
+            <button>Quitar Acceso</button>
+            </td>
+          </tr>
+        
+        </tbody>
+      </table>
+    </div>
+  </div>

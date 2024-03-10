@@ -1,0 +1,27 @@
+<div class="container mt-2">
+    <h2>Historial Preguntas</h2>
+    <div class="table-responsive">
+      <table class="table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Accion</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let u of Users; let i=index">
+            <th scope="row"> {{u.id}} </th>
+            <td> {{u.name}} </td>
+            <td> {{u.email}} </td>
+            <td>
+            <button (click)="coordinarMatriculaAdmin(u.id,i)">Dar Acceso a Admin</button>
+            </td>
+          </tr>
+        
+        </tbody>
+      </table>
+    </div>
+  </div>
+

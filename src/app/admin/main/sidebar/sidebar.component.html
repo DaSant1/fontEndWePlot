@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <!-- sidebar-->
+      <aside>
+
+            <div class="toggle">
+        <div class="logo">
+            <img src="../../../../assets/img.png">"
+            <h2>Modo Administrador</h2>
+        </div>
+        <div class="close"  id="close-btn">
+            <span class="material-icons-sharp">
+                close
+            </span>
+        </div>
+    </div>
+
+    <div class="sidebar" #sideMenu >
+        <p> Hola, {{fullName}} </p>
+
+        <a [routerLink]="['InfoAdmins']">
+            <span class="material-icons-sharp">
+                person
+            </span>
+            <h3>Administrar Admin</h3>
+        </a>
+
+        <a [routerLink]="['Preguntas']"class="active">
+            <span class="material-icons-sharp">
+                inventory
+            </span>
+            <h3>Ver Preguntas</h3>
+        </a>
+        <a [routerLink]="['Users']">
+            <span class="material-icons-sharp">
+                history
+            </span>
+            <h3>Historial usuarios</h3>
+        </a>
+        <a [routerLink]="['createPregunta']">
+            <span class="material-icons-sharp">
+                edit
+            </span>
+            <h3>Crear Pregunta</h3>
+        </a>
+        
+      
+        <a [routerLink]="['/LogIn']">
+            <span class="material-icons-sharp">
+                menu_open
+            </span>
+            <h3>Cerrar Sesion</h3>
+        </a>
+    </div>
+      </aside>
+      <!-- end sibebar-->
+      <main>
+        <!-- <app-navbar></app-navbar>-->  
+          <router-outlet></router-outlet>
+        <!--- <app-footer></app-footer> -->
+      </main>
+
+      <!-- Right Section -->
+      <div class="right-section">
+        <div class="nav">
+            <button id="menu-btn"   #menuBtn >
+                <span class="material-icons-sharp">
+                    menu
+                </span>
+            </button>
+            <div class="dark-mode">
+                <span class="material-icons-sharp active">
+                    light_mode
+                </span>
+                <span class="material-icons-sharp">
+                    dark_mode
+                </span>
+            </div>
+
+            <div class="profile">
+                <div class="info">
+                    <p>Hey, <b>{{fullName}} </b></p>
+                 
+                </div>
+                
+            </div>
+
+        </div>
+        <!-- End of Nav -->
+      
+
+  </div>
+
+    </div>
+</body>
+</html>
+<script>
+const sideMenu = document.querySelector('aside');
+const menuBtn = document.getElementById('menu-btn');
+const closeBtn = document.getElementById('close-btn');
+
+const darkMode = document.querySelector('.dark-mode');
+
+menuBtn.addEventListener('click', () => {
+    sideMenu.style.display = 'block';
+});
+
+closeBtn.addEventListener('click', () => {
+    sideMenu.style.display = 'none';
+});
+
+darkMode.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode-variables');
+    darkMode.querySelector('span:nth-child(1)').classList.toggle('active');
+    darkMode.querySelector('span:nth-child(2)').classList.toggle('active');
+})
+
+alert("Es funcional0");
+
+
+/*Orders.forEach(order => {
+    const tr = document.createElement('tr');
+    const trContent = `
+        <td>${order.productName}</td>
+        <td>${order.productNumber}</td>
+        <td>${order.paymentStatus}</td>
+        <td class="${order.status === 'Declined' ? 'danger' : order.status === 'Pending' ? 'warning' : 'primary'}">${order.status}</td>
+        <td class="primary">Details</td>
+    `;
+    tr.innerHTML = trContent;
+    document.querySelector('table tbody').appendChild(tr);
+});*/
+  </script>
+
+</body>
+</html>

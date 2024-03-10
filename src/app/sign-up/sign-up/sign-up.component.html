@@ -1,1 +1,90 @@
-<p>sign-up works!</p>
+<!-- Section: Design Block -->
+<section class="">
+    <!-- Jumbotron -->
+    <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+      <div class="container">
+        <div class="row gx-lg-5 align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <img class="img-fluid  w-75" src="../../../assets/img.png" alt="">
+          
+          </div>
+  
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <div class="card">
+              <div class="card-body py-5 px-md-5">
+                <form>
+                    <h1 class="my-2 display-3 fw-bold ls-tight ">
+                        Registrate en <span class="text-danger">WePlot</span>  <br />
+                       <!--<span class="text-primary">for your business</span> -->
+                     </h1>
+                  <!-- 2 column grid layout with text inputs for the first and last names -->
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <mat-form-field  class="white-background">
+                          <mat-label class="white-background">Primer Nombre</mat-label>
+                          <input matInput [(ngModel)]="primerNombre" type="text" id="input" class="white-background" [ngModelOptions]="{standalone: true}" required>
+                      </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <mat-form-field  class="white-background">
+                          <mat-label class="white-background">Segundo Nombre</mat-label>
+                          <input matInput [(ngModel)]="segundoNombre" type="text" id="input" class="white-background" [ngModelOptions]="{standalone: true}" required>
+                      </mat-form-field>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <!-- Email input -->
+                  <div class="form-outline mb-4">
+                    <mat-form-field  class="white-background">
+                      <mat-label class="white-background"> Email</mat-label>
+                      <input matInput [(ngModel)]="email" type="text" id="input" class="white-background" [ngModelOptions]="{standalone: true}" required>
+                  </mat-form-field>
+                  </div>
+  
+                  <!-- Password input -->
+                  <div class="form-outline mb-4">
+                    <mat-form-field  >
+                      <mat-label >Password</mat-label>
+                      <input matInput [(ngModel)]="password1" type="password" id="input" class="white-background" [ngModelOptions]="{standalone: true}" required>
+                  </mat-form-field>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <mat-form-field  >
+                      <mat-label >Repite Password</mat-label>
+                      <input matInput [(ngModel)]="password2"   type="password" id="input" class="white-background" [ngModelOptions]="{standalone: true}" required>
+                  </mat-form-field>
+                  </div>
+                  <div class="row">
+                    <p>Constesta las siguientes Preguntas</p>
+                    <div class="col-md-6 mb-4" *ngFor="let p of preguntas; let i=index">
+                      <div class="form-outline">
+                        <mat-form-field  >
+                          <mat-label > {{p.pregunta}} </mat-label>
+                          <input matInput [(ngModel)]="RespuestaArray[i]"  type="text" id="input" class="white-background" [ngModelOptions]="{standalone: true}" required>
+                      </mat-form-field>
+                      </div>
+                    </div>
+                    
+                  </div>
+  
+                  <!-- Submit button -->
+                  <button mat-button (click)="verificarCampos()" class="btn btn-primary btn-block mb-4">
+                    Sign up
+                  </button>
+  
+      
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  </section>
+  <!-- Section: Design Block -->

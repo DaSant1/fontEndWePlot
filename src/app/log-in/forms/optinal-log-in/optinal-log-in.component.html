@@ -1,0 +1,19 @@
+<mat-dialog-content class="container">
+  <h1 class="mb-4">Seleccione Modo Inicio Sesion</h1>
+  <div class="mb-4">
+    <h3>Esta cuenta tiene asociada dos roles de usuario</h3>
+    <mat-form-field>
+      <mat-label>Seleccione un modo de Inicio de Sesión</mat-label>
+      <mat-select [(ngModel)]="selectedOption">
+        <mat-option *ngFor="let opcion of options" [value]="opcion">{{ opcion }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-raised-button color="warn" (click)="closeForm()">Cerrar</button>
+  <button mat-button (click)="coordinarOpcion()">Ingresar</button>
+</mat-dialog-actions>
+
